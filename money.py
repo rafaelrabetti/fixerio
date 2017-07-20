@@ -33,13 +33,14 @@ while start <= stop:
         d[data['date']] = data['rates']['BRL']
         aux = aux + float(data['rates']['BRL'])
         count = count + 1
-        
+
 # gets the date where the values are maximum and minimum in the dictionary
 max_value = max(d.iteritems(), key=operator.itemgetter(1))[0]
 min_value = min(d.iteritems(), key=operator.itemgetter(1))[0]
 
-print "Data do menor valor observado: " + min_value
-print "Data do maior valor observado: " + max_value
 media = (float(aux) - value_start_date - value_stop_date)/(count-2)
 media_string = "{:.4f}".format(media)
+
+print "Data do menor valor observado: " + min_value
+print "Data do maior valor observado: " + max_value
 print "Media de cotacao para o periodo excetuando os dias de inicio e fim: " + media_string
